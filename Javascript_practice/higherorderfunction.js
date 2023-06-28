@@ -41,7 +41,42 @@
 // console.log(ans);
 // let filter=arr2.filter((a,i)=>a%2===0).map((e,i)=>e+2);
 // console.log(filter);
-//test
+
+// Higher function defination --->
+
+// Definations: Higher-order functions are regaular functions that take one or more functions as arguments and/or return functions as a value from it. 
+
+// eg: function x(){
+//   console.log("hello");
+// }
+//  function y(){
+//     x();
+//    }
+//  y(x);  hello; here y is a higherorder function and x is callback function;
+
+// function press(){
+//   return ()=>{
+//     console.log("welcome to my Home");
+//   }
+// }
+//  let ans=press();
+//  ans();
+//  In this example, we are returning a function from another function - We can return a function because functions in JavaScript are treated as values.
+// Callback Function --->
+// A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+ 
+// function greeting(name) {
+//   console.log(`Hello, ${name}`);
+// }
+
+// function processUserInput(callback) {
+//   const name = "Please enter your name.";
+//   callback(name);
+// }
+
+// processUserInput(greeting);
+
+// The above example is a synchronous callback, as it is executed immediately.
 
 
 
