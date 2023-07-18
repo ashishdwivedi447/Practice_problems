@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="newFun()" id="myid">Hello</button>
+</body>
+</html>
+
+<script>
+
+const mythrottle = (fn, d) => {
+  return function (...args) {
+    // Disable the element with the ID "myid"
+    document.querySelector("#myid").disabled = true;
+    
+    // Set a timeout to re-enable the element and invoke the function after the specified delay (d)
+    setTimeout(() => {
+      fn();
+    }, d);
+  };
+};
+
+// Define a new function, newFun, that wraps the original function with throttling
+const newFun = mythrottle(() => {
+  // Re-enable the element with the ID "myid"
+  document.querySelector("#myid").disabled = false;
+  
+  console.log("User clicked");
+}, 5000);
+
+</script>
+
+throttling ---. Throttling is a technique in JavaScript that limits the rate at which a function can be invoked. It ensures that the function is called at most once within a specified time interval, even if it is triggered multiple times. it is used to limit the frequency of certain events or operattions especially those can be triggered rapidly.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Enter the name of the character" onkeypress="betterfunction()">
+  
+    <script>
+        // Counter variable to keep track of the number of times data is fetched
+        let counter = 0;
+
+        // Function that simulates fetching data
+        function getData() {
+            console.log("Fetching data" + " " + counter++);
+        }
+
+        // Debounce function that delays the execution of a function
+        function mydebounce(call, d) {
+            let timer;
+
+            return function(...args) {
+                if (timer) clearInterval(timer);
+
+                // Set a new timeout to execute the function after the delay
+                timer = setTimeout(() => {
+                    call(...args);
+                }, d);
+            };
+        }
+
+        // Create a debounced version of the getData function
+        const betterfunction = mydebounce(getData, 2000);
+    </script>
+</body>
+</html>
+
+debouncing: it is a performance optimasation technique that limits the rate at which function gets invoked.
